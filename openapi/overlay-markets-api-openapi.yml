@@ -1,0 +1,57 @@
+openapi: 3.1.0
+info:
+  title: Overlay Market Data Aggregator Markets API
+  version: v1
+  description: Public, unauthenticated market-data API for the Overlay Protocol — a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56). Covers the CoinGecko/CMC-style aggregator feed, the market catalog, and the charts price-overview feed. All endpoints are read-only and public. Trading itself is executed on-chain against Overlay smart contracts (Shiva, OverlayV1State); this API surfaces the off-chain data/indexing layer.
+  contact:
+    name: Overlay Protocol
+    url: https://docs.overlay.market/
+  x-provenance:
+    generated: '2026-07-20'
+    method: searched
+    source: https://docs.overlay.market/api/aggregator-market-data + live probes of https://api.overlay.market (2026-07-20, HTTP 200)
+servers:
+- url: https://api.overlay.market
+  description: Production
+tags:
+- name: Markets
+  description: Market catalog and metadata.
+paths:
+  /data/api/markets:
+    get:
+      operationId: getMarkets
+      tags:
+      - Markets
+      summary: List the market catalog keyed by chain id
+      description: Returns the market catalog as an object keyed by chain id (e.g. "56" for BNB Smart Chain), each value an array of market metadata records (name, logo, currency, description/methodology).
+      responses:
+        '200':
+          description: Market catalog keyed by chain id.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Market'
+components:
+  schemas:
+    Market:
+      type: object
+      description: Market catalog metadata record.
+      properties:
+        _id:
+          type: string
+          example: 66d71b2f72d1c12e59686e23
+        marketName:
+          type: string
+          example: Counter-Strike 2 Skins
+        logo:
+          type: string
+        currency:
+          type: string
+          example: USD
+        descriptionText:
+          type: string
+          description: What the market tracks + methodology.

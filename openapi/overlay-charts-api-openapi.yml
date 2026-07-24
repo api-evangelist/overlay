@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Overlay Market Data Aggregator Charts API
+  version: v1
+  description: Public, unauthenticated market-data API for the Overlay Protocol — a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56). Covers the CoinGecko/CMC-style aggregator feed, the market catalog, and the charts price-overview feed. All endpoints are read-only and public. Trading itself is executed on-chain against Overlay smart contracts (Shiva, OverlayV1State); this API surfaces the off-chain data/indexing layer.
+  contact:
+    name: Overlay Protocol
+    url: https://docs.overlay.market/
+  x-provenance:
+    generated: '2026-07-20'
+    method: searched
+    source: https://docs.overlay.market/api/aggregator-market-data + live probes of https://api.overlay.market (2026-07-20, HTTP 200)
+servers:
+- url: https://api.overlay.market
+  description: Production
+tags:
+- name: Charts
+  description: Price overview and OHLC chart data.
+paths:
+  /bsc-charts/v1/charts/marketsPricesOverview:
+    get:
+      operationId: getMarketsPricesOverview
+      tags:
+      - Charts
+      summary: Price overview across markets
+      description: Returns a per-market price overview — latest price, price seven days ago, and a series of recent prices for sparkline rendering.
+      responses:
+        '200':
+          description: Array of per-market price overviews.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MarketPriceOverview'
+components:
+  schemas:
+    MarketPriceOverview:
+      type: object
+      properties:
+        marketAddress:
+          type: string
+          description: On-chain market contract address (BSC).
+        latestPrice:
+          type: number
+        priceSevenDaysAgo:
+          type: number
+        prices:
+          type: array
+          items:
+            type: number
+          description: Recent price series for sparkline rendering.
