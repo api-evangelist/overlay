@@ -1,0 +1,30 @@
+# Overlay Protocol
+
+> Overlay is a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56) for trading emerging, pre-CEX, and narrative-driven assets. It offers permissionless market creation with zero liquidity requirements against any verifiable data feed, using a dynamic risk engine. This profile catalogs Overlay's public market-data API, SDK, and agent skill for the API Evangelist network.
+
+## APIs
+
+- [Overlay Market Data API](https://docs.overlay.market/api/aggregator-market-data): Public, unauthenticated REST feed — aggregator contracts, contract specs, market catalog, and charts price overview. Base URL https://api.overlay.market
+- [Aggregator contracts](https://api.overlay.market/data/api/aggregator/contracts): Live market data (price, 24h volume, bid/ask, open interest, funding rate) for all enabled markets.
+- [Market catalog](https://api.overlay.market/data/api/markets): Markets keyed by chain id with metadata and methodology.
+
+## Specs
+
+- [OpenAPI](openapi/overlay-openapi.yml): Overlay Market Data API (searched + live-probed 2026-07-20).
+- [Data model](data-model/overlay-data-model.yml): Market / AggregatorContract / ContractSpec / MarketPriceOverview.
+- [Conventions](conventions/overlay-conventions.yml): No auth, no pagination, 60s cache.
+
+## Developers
+
+- [Documentation](https://docs.overlay.market/)
+- [GitHub](https://github.com/overlay-market): v1-core, overlay-sdk, v1-subgraph, agent-skill, overlay-docs.
+- [TypeScript SDK](https://github.com/overlay-market/overlay-sdk): OverlaySDK.
+- [Agent Skill](https://github.com/overlay-market/agent-skill): trade perpetuals on BSC (skills/overlay-market.md).
+- [App](https://app.overlay.market)
+- [Whitepaper](https://redrct.overlay.market/whitepaper)
+
+## Community
+
+- [Twitter](https://twitter.com/OverlayProtocol)
+- [Discord](https://redrct.overlay.market/discord)
+- [Telegram](https://t.me/overlay_protocol)

@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/overlay-market
+packages:
+  - language: typescript
+    registry: github
+    name: overlay-sdk
+    url: https://github.com/overlay-market/overlay-sdk
+    install: pnpm add overlay-sdk
+    official: true
+    note: >-
+      First-party TypeScript SDK (OverlaySDK) for interacting with the Overlay
+      Protocol on BSC. Distributed from the monorepo (packages/overlay-sdk); the
+      npm name "overlay-sdk" is registered but has no published versions as of
+      2026-07-20, so install from source.
+  - language: javascript
+    registry: github
+    name: agent-skill
+    url: https://github.com/overlay-market/agent-skill
+    install: git clone https://github.com/overlay-market/agent-skill
+    official: true
+    note: >-
+      First-party agent skill (package name "overlay-market", v0.1.6) — Node.js
+      scripts to scan markets, chart, and encode build/unwind trades on BSC.
+      Depends on viem. See skills/overlay-market.md.

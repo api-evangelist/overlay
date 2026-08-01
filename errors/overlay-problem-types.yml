@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: derived
+format: http-status
+source: >-
+  openapi/overlay-openapi.yml + https://docs.overlay.market/api/aggregator-market-data
+note: >-
+  The public market-data API does not use RFC 9457 problem+json; failures are
+  signalled via HTTP status. Documented failure mode below; unavailable markets
+  are silently omitted from otherwise-successful responses.
+problems:
+  - status: 503
+    title: Service unavailable
+    detail: Returned when all markets fail and no cached data is available.
+    source_operation: openapi/overlay-openapi.yml#getAggregatorContracts

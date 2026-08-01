@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Overlay Market Data API
+  version: 1.0.0
+extends: openapi/overlay-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-rating: 3
+      x-apievangelist-notes: >-
+        Public read-only market-data API for a BSC perpetual-futures protocol.
+        Strong agent surface (provider-published Agent Skill + TypeScript SDK);
+        no auth/pagination/webhooks. Trading is on-chain.
+  - target: $.info
+    update:
+      x-agent-skill: https://github.com/overlay-market/agent-skill
+      x-graphql-subgraph: https://github.com/overlay-market/v1-subgraph

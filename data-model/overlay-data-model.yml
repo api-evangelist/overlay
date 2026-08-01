@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/overlay-openapi.yml + live responses (2026-07-20)
+entities:
+  - name: Market
+    description: A tradable Overlay market (perpetual on a data feed), keyed by chain id.
+    key: _id
+    onchain_ref: marketAddress (BSC contract)
+    fields: [_id, marketName, logo, currency, descriptionText, marketAddress]
+  - name: AggregatorContract
+    description: A market's live aggregator data record.
+    key: ticker_id
+    fields: [ticker_id, base_currency, target_currency, last_price, base_volume,
+             open_interest, index_price, funding_rate]
+  - name: ContractSpec
+    description: Specification subset for a market.
+    key: ticker_id
+    fields: [ticker_id, contract_type, contract_price_currency]
+  - name: MarketPriceOverview
+    description: Per-market price sparkline overview.
+    key: marketAddress
+    fields: [marketAddress, latestPrice, priceSevenDaysAgo, prices]
+relationships:
+  - from: AggregatorContract
+    to: Market
+    type: belongs_to
+    via: ticker_id -> marketName/currency
+  - from: ContractSpec
+    to: AggregatorContract
+    type: belongs_to
+    via: ticker_id
+  - from: MarketPriceOverview
+    to: Market
+    type: belongs_to
+    via: marketAddress

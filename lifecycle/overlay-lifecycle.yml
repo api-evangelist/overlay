@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://docs.overlay.market/ + https://github.com/overlay-market +
+  live probes of https://api.overlay.market (2026-07-20)
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: >-
+    Charts API is path-versioned (bsc-charts/v1). Protocol is versioned as V1
+    (v1-core contracts, v1-subgraph); V0 is archived.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No formal API deprecation policy or Sunset/Deprecation header support found.
+sla:
+  url: null
+  detail: No published SLA / uptime target.
+status_page: null
+audits:
+  detail: >-
+    Smart-contract security audits by Spearbit DAO, Least Authority, Trail of
+    Bits, and Nethermind (per overlay.market). These are on-chain audits, not an
+    API status page.
+deprecated_operations: []

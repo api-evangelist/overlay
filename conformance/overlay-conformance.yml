@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/overlay-openapi.yml + https://docs.overlay.market/api/aggregator-market-data
+standards:
+  - id: coingecko-cmc-aggregator-schema
+    conforms: true
+    evidence: >-
+      /data/api/aggregator/contracts returns the CoinGecko/CMC aggregator field
+      set (ticker_id, base/target_currency, last_price, base/target_volume, bid,
+      ask, high, low, open_interest, funding_rate).
+  - id: rest-json
+    conforms: true
+    evidence: JSON-over-HTTPS read endpoints.
+  - id: oauth2
+    conforms: false
+    evidence: No authentication; public read API.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Failures use HTTP status, not application/problem+json.
+  - id: graphql
+    conforms: true
+    evidence: >-
+      Protocol data indexed as a GraphQL subgraph (overlay-market/v1-subgraph,
+      served via Goldsky).

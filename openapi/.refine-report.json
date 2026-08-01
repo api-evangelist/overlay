@@ -1,0 +1,18 @@
+{
+  "provider": "overlay",
+  "sources": [
+    "overlay-aggregator-api-openapi.yml",
+    "overlay-charts-api-openapi.yml",
+    "overlay-markets-api-openapi.yml"
+  ],
+  "outputs": [
+    "overlay-aggregator-api-openapi.yml",
+    "overlay-charts-api-openapi.yml",
+    "overlay-markets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

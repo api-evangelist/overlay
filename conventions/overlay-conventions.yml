@@ -1,0 +1,39 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://docs.overlay.market/api/aggregator-market-data + live probes of
+  https://api.overlay.market
+summary: >-
+  Overlay's public market-data API is a read-only REST feed. No authentication,
+  no pagination, no idempotency contract (all GET/read). Trading is executed
+  on-chain (BSC) and is not part of this HTTP surface.
+authentication:
+  style: none
+  detail: The market-data endpoints are public and require no authentication.
+pagination:
+  supported: false
+  detail: Endpoints return full arrays; no cursor/offset paging is documented.
+idempotency:
+  supported: false
+  detail: >-
+    Read-only API — no idempotency-key header. State-changing actions (open /
+    unwind positions) are on-chain transactions guarded by slippage price limits,
+    not HTTP idempotency keys.
+caching:
+  detail: Aggregator responses are cached for 60 seconds.
+versioning:
+  scheme: uri-path
+  detail: >-
+    The charts API is versioned in the path (bsc-charts/v1/...). The aggregator
+    feed follows the CoinGecko/CMC aggregator schema. Chain is selected by id
+    (BNB Smart Chain = 56).
+error_envelope:
+  detail: >-
+    Failure surfaces as HTTP status (e.g. 503 when all markets fail with no
+    cached data). See errors/overlay-problem-types.yml.
+rate_limit_signaling:
+  detail: No documented rate-limit headers; feed is edge-cached.
+cross_links:
+  errors: errors/overlay-problem-types.yml
+  authentication: authentication/overlay-authentication.yml
+  lifecycle: lifecycle/overlay-lifecycle.yml

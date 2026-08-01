@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: probed
+source: live probes 2026-07-20
+hosts:
+  - host: https://api.overlay.market
+    documents:
+      - path: /.well-known/security.txt
+        status: 502
+      - path: /.well-known/openid-configuration
+        status: 502
+      - path: /.well-known/oauth-authorization-server
+        status: 502
+      - path: /.well-known/api-catalog
+        status: 502
+      - path: /.well-known/ai-plugin.json
+        status: 502
+  - host: https://overlay.market
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://docs.overlay.market
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+note: >-
+  No .well-known discovery documents are published. The api host returns 502 for
+  the /.well-known/* path prefix (edge behaviour); the site and docs hosts
+  return 404. Absence recorded as valid data.

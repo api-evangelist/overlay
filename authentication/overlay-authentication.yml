@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.overlay.market/api/aggregator-market-data
+summary:
+  types: [none]
+  detail: >-
+    The Overlay public market-data API requires no authentication — the docs
+    state the endpoints are public. Trading actions are authorized on-chain by
+    the wallet signing BSC transactions (chain id 56), not by an API credential.
+schemes:
+  - name: public
+    type: none
+    description: No API key, token, or OAuth. All market-data endpoints are open.
+    sources: [openapi/overlay-openapi.yml]
+onchain_authorization:
+  detail: >-
+    build/unwind transactions are signed by the trader's wallet and executed
+    against the Shiva trading contract (0xeB497c228F130BD91E7F13f81c312243961d894A)
+    on BSC. The published agent skill recommends a smart-contract account with
+    restricted permissions (Safe + Zodiac Roles) rather than a raw private key.

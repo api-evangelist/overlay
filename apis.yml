@@ -1,8 +1,29 @@
 aid: overlay
 name: Overlay
-description: 'Overlay is a company surfaced as a portfolio company of polychain and added to the API Evangelist
-  network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Overlay is a decentralized perpetual-futures protocol on BNB Smart Chain (chain
+  id 56) that lets anyone trade and permissionlessly create markets for emerging,
+  pre-CEX, and narrative-driven assets against any verifiable data feed. Positions
+  are synthetic — traders trade against a protocol-managed price feed with
+  USDT/stablecoin collateral rather than an order book — with a dynamic risk
+  engine managing thin markets and zero liquidity requirements. Overlay exposes a
+  public, unauthenticated market-data API (aggregator contracts, contract specs,
+  market catalog, charts price overview), a TypeScript SDK, a GraphQL subgraph,
+  and a provider-published Agent Skill for automated trading. Backed by Polychain.
 url: https://raw.githubusercontent.com/api-evangelist/overlay/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/70023182?v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,11 +32,55 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Defi
-apis: []
+- DeFi
+- Perpetual Futures
+- Derivatives
+- Trading
+- Market Data
+- BNB Smart Chain
+- Blockchain
+- Web3
+apis:
+- aid: overlay:overlay-aggregator-api
+  name: Overlay Aggregator API
+  description: CoinGecko/CMC-style aggregator market-data feed.
+  humanURL: https://docs.overlay.market/api/aggregator-market-data
+  baseURL: https://api.overlay.market
+  tags:
+  - Aggregator
+  properties:
+  - type: OpenAPI
+    url: openapi/overlay-aggregator-api-openapi.yml
+  - type: APIReference
+    url: https://docs.overlay.market/api/aggregator-market-data
+- aid: overlay:overlay-charts-api
+  name: Overlay Charts API
+  description: Price overview and OHLC chart data.
+  humanURL: https://docs.overlay.market/api/aggregator-market-data
+  baseURL: https://api.overlay.market
+  tags:
+  - Charts
+  properties:
+  - type: OpenAPI
+    url: openapi/overlay-charts-api-openapi.yml
+  - type: APIReference
+    url: https://docs.overlay.market/api/aggregator-market-data
+- aid: overlay:overlay-markets-api
+  name: Overlay Markets API
+  description: Market catalog and metadata.
+  humanURL: https://docs.overlay.market/api/aggregator-market-data
+  baseURL: https://api.overlay.market
+  tags:
+  - Markets
+  properties:
+  - type: OpenAPI
+    url: openapi/overlay-markets-api-openapi.yml
+  - type: APIReference
+    url: https://docs.overlay.market/api/aggregator-market-data
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +89,48 @@ maintainers:
 common:
 - type: Website
   url: https://overlay.market
+- type: Documentation
+  url: https://docs.overlay.market/
+- type: DeveloperPortal
+  url: https://docs.overlay.market/
+- type: APIReference
+  url: https://docs.overlay.market/api/aggregator-market-data
+- type: GitHubOrganization
+  url: https://github.com/overlay-market
+- type: Support
+  url: https://redrct.overlay.market/discord
+- type: Whitepaper
+  url: https://redrct.overlay.market/whitepaper
+- type: OpenAPI
+  url: openapi/overlay-openapi.yml
+- type: Authentication
+  url: authentication/overlay-authentication.yml
+- type: Conventions
+  url: conventions/overlay-conventions.yml
+- type: ErrorCatalog
+  url: errors/overlay-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/overlay-lifecycle.yml
+- type: Conformance
+  url: conformance/overlay-conformance.yml
+- type: DataModel
+  url: data-model/overlay-data-model.yml
+- type: Overlay
+  url: overlays/overlay-openapi-overlay.yaml
+- type: LLMsTxt
+  url: llms/overlay-llms.txt
+- type: MCPServer
+  url: mcp/overlay-mcp.yml
+- type: Packages
+  url: packages/overlay-packages.yml
+- type: SDKs
+  url: packages/overlay-packages.yml
+- type: AgentSkill
+  url: skills/overlay-market.md
+- type: DomainSecurity
+  url: security/overlay-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1
