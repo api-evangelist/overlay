@@ -102,7 +102,7 @@ common:
 - type: Whitepaper
   url: https://redrct.overlay.market/whitepaper
 - type: OpenAPI
-  url: openapi/overlay-openapi.yml
+  url: openapi/_original/overlay-openapi.yml
 - type: Authentication
   url: authentication/overlay-authentication.yml
 - type: Conventions
