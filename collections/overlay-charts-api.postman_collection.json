@@ -1,0 +1,108 @@
+{
+  "item": [
+    {
+      "id": "dcff4ce7-504d-48a0-bb66-ac4e441297d3",
+      "name": "Charts",
+      "description": {
+        "content": "Price overview and OHLC chart data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d0af5868-94e5-4cb6-acd6-0a91125a6da3",
+          "name": "Price overview across markets",
+          "request": {
+            "name": "Price overview across markets",
+            "description": {
+              "content": "Returns a per-market price overview — latest price, price seven days ago, and a series of recent prices for sparkline rendering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "bsc-charts",
+                "v1",
+                "charts",
+                "marketsPricesOverview"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "052e49b1-f0cf-4ef8-9666-531a7785571e",
+              "name": "Array of per-market price overviews.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bsc-charts",
+                    "v1",
+                    "charts",
+                    "marketsPricesOverview"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"marketAddress\": \"string\",\n    \"latestPrice\": 2344.019853484378,\n    \"priceSevenDaysAgo\": 1573.588175652959,\n    \"prices\": [\n      8409.996069589513,\n      4528.2646166691275\n    ]\n  },\n  {\n    \"marketAddress\": \"string\",\n    \"latestPrice\": 2289.9354416845295,\n    \"priceSevenDaysAgo\": 4510.067473482869,\n    \"prices\": [\n      8208.161032278858,\n      7672.389512228149\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.overlay.market",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6246197b-3789-456f-8377-6b4ba2898505",
+    "name": "Overlay Market Data Aggregator Charts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated market-data API for the Overlay Protocol — a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56). Covers the CoinGecko/CMC-style aggregator feed, the market catalog, and the charts price-overview feed. All endpoints are read-only and public. Trading itself is executed on-chain against Overlay smart contracts (Shiva, OverlayV1State); this API surfaces the off-chain data/indexing layer.\n\nContact Support:\n Name: Overlay Protocol",
+      "type": "text/plain"
+    }
+  }
+}

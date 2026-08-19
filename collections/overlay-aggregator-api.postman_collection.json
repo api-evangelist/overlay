@@ -1,0 +1,248 @@
+{
+  "item": [
+    {
+      "id": "166608d1-a798-4021-8e5c-73a3d271f339",
+      "name": "Aggregator",
+      "description": {
+        "content": "CoinGecko/CMC-style aggregator market-data feed.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "266f3821-07d9-4e8e-ba15-25546b5e5b55",
+          "name": "List aggregator market data for all enabled markets",
+          "request": {
+            "name": "List aggregator market data for all enabled markets",
+            "description": {
+              "content": "Returns comprehensive market data for every enabled derivative market (price, 24h volume, bid/ask, open interest, index price, funding rate). Responses are cached for 60 seconds. Unavailable markets are omitted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "aggregator",
+                "contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b116675b-0dd9-4e22-885c-5757e4d2c8b3",
+              "name": "Array of market data records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "aggregator",
+                    "contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ticker_id\": \"BTC-USD-PERP\",\n    \"contract_type\": \"vanilla\",\n    \"base_currency\": \"BTC\",\n    \"target_currency\": \"USD\",\n    \"last_price\": 4525.911500924384,\n    \"contract_price_currency\": \"USD\",\n    \"contract_price\": 2746.3483943806455,\n    \"base_volume\": 4048.2828225536405,\n    \"target_volume\": 8444.811431929855,\n    \"bid\": 2647.947892061202,\n    \"ask\": 779.2873365665021,\n    \"high\": 908.4148499485956,\n    \"low\": 2175.4117021178454,\n    \"product_type\": \"perpetual\",\n    \"open_interest\": 7844.958046449301,\n    \"open_interest_usd\": 4507.84830460463,\n    \"index_price\": 3383.2230440890976,\n    \"index_name\": \"BTC-USD\",\n    \"index_currency\": \"USD\",\n    \"start_timestamp\": 705,\n    \"end_timestamp\": 6312,\n    \"funding_rate\": 7719.557089339372,\n    \"next_funding_rate\": 4373.732607355634,\n    \"next_funding_rate_timestamp\": 2116\n  },\n  {\n    \"ticker_id\": \"BTC-USD-PERP\",\n    \"contract_type\": \"vanilla\",\n    \"base_currency\": \"BTC\",\n    \"target_currency\": \"USD\",\n    \"last_price\": 4887.3248524482005,\n    \"contract_price_currency\": \"USD\",\n    \"contract_price\": 3185.496108795204,\n    \"base_volume\": 914.3897160202264,\n    \"target_volume\": 3414.295598673064,\n    \"bid\": 4303.792154980692,\n    \"ask\": 5776.2454589679455,\n    \"high\": 8296.385479297604,\n    \"low\": 5385.477875743787,\n    \"product_type\": \"perpetual\",\n    \"open_interest\": 3912.1751973311393,\n    \"open_interest_usd\": 1450.3395880751546,\n    \"index_price\": 1929.707479754974,\n    \"index_name\": \"BTC-USD\",\n    \"index_currency\": \"USD\",\n    \"start_timestamp\": 173,\n    \"end_timestamp\": 4755,\n    \"funding_rate\": 3463.669427489352,\n    \"next_funding_rate\": 8687.861328383522,\n    \"next_funding_rate_timestamp\": 5423\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f3b02ec-5a84-4d30-a7eb-d4c3515ef2f6",
+              "name": "All markets failed and no cached data was available.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "aggregator",
+                    "contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe0d6fd2-6e34-4a76-ab67-cd507496bd99",
+          "name": "List contract specifications for all enabled markets",
+          "request": {
+            "name": "List contract specifications for all enabled markets",
+            "description": {
+              "content": "Returns a contract-specification subset for each enabled market.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "aggregator",
+                "contract_specs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64da1720-33e1-464e-a77a-0275ef5345d9",
+              "name": "Array of contract specifications.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "aggregator",
+                    "contract_specs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"ticker_id\": \"BTC-USD-PERP\",\n    \"contract_type\": \"vanilla\",\n    \"contract_price_currency\": \"USD\"\n  },\n  {\n    \"ticker_id\": \"BTC-USD-PERP\",\n    \"contract_type\": \"vanilla\",\n    \"contract_price_currency\": \"USD\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81bf0f17-8ad1-4d08-ada3-72451bd28bd8",
+              "name": "All markets failed and no cached data was available.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "aggregator",
+                    "contract_specs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.overlay.market",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "99950470-ac77-48c5-830d-40afb66e4a27",
+    "name": "Overlay Market Data Aggregator API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated market-data API for the Overlay Protocol — a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56). Covers the CoinGecko/CMC-style aggregator feed, the market catalog, and the charts price-overview feed. All endpoints are read-only and public. Trading itself is executed on-chain against Overlay smart contracts (Shiva, OverlayV1State); this API surfaces the off-chain data/indexing layer.\n\nContact Support:\n Name: Overlay Protocol",
+      "type": "text/plain"
+    }
+  }
+}

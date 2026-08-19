@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "40f3106e-0601-4d51-90fe-de6276fefd3e",
+      "name": "Markets",
+      "description": {
+        "content": "Market catalog and metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ddd81375-52c3-4e92-be8d-376064a5ebaa",
+          "name": "List the market catalog keyed by chain id",
+          "request": {
+            "name": "List the market catalog keyed by chain id",
+            "description": {
+              "content": "Returns the market catalog as an object keyed by chain id (e.g. \"56\" for BNB Smart Chain), each value an array of market metadata records (name, logo, currency, description/methodology).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "data",
+                "api",
+                "markets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88dff153-8f8c-4e6f-9724-3107454f7cce",
+              "name": "Market catalog keyed by chain id.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data",
+                    "api",
+                    "markets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": [\n    {\n      \"_id\": \"66d71b2f72d1c12e59686e23\",\n      \"marketName\": \"Counter-Strike 2 Skins\",\n      \"logo\": \"string\",\n      \"currency\": \"USD\",\n      \"descriptionText\": \"string\"\n    },\n    {\n      \"_id\": \"66d71b2f72d1c12e59686e23\",\n      \"marketName\": \"Counter-Strike 2 Skins\",\n      \"logo\": \"string\",\n      \"currency\": \"USD\",\n      \"descriptionText\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.overlay.market",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2773ec76-4f35-4087-974e-30cbb6dcae6c",
+    "name": "Overlay Market Data Aggregator Markets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, unauthenticated market-data API for the Overlay Protocol — a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56). Covers the CoinGecko/CMC-style aggregator feed, the market catalog, and the charts price-overview feed. All endpoints are read-only and public. Trading itself is executed on-chain against Overlay smart contracts (Shiva, OverlayV1State); this API surfaces the off-chain data/indexing layer.\n\nContact Support:\n Name: Overlay Protocol",
+      "type": "text/plain"
+    }
+  }
+}

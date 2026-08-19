@@ -2,24 +2,28 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/overlay-openapi.yml
-note: >-
-  No official hosted/remote MCP server was found for Overlay as of 2026-07-20.
-  Overlay does publish an Agent Skill (skills/overlay-market.md) for trading via
-  BSC. The tool list below is a candidate derived from the public market-data
-  API operations.
+note: No official hosted/remote MCP server was found for Overlay as of 2026-07-20. Overlay does publish
+  an Agent Skill (skills/overlay-market.md) for trading via BSC. The tool list below is a candidate derived
+  from the public market-data API operations.
 server:
   name: overlay
   transport: http
 tools:
-  - name: get_aggregator_contracts
-    description: List aggregator market data (price, volume, OI, funding) for all enabled markets.
-    source_operation: openapi/overlay-openapi.yml#getAggregatorContracts
-  - name: get_contract_specs
-    description: List contract specifications for all enabled markets.
-    source_operation: openapi/overlay-openapi.yml#getAggregatorContractSpecs
-  - name: get_markets
-    description: List the market catalog keyed by chain id.
-    source_operation: openapi/overlay-openapi.yml#getMarkets
-  - name: get_markets_prices_overview
-    description: Get per-market price overview and recent price series.
-    source_operation: openapi/overlay-openapi.yml#getMarketsPricesOverview
+- name: get_aggregator_contracts
+  description: List aggregator market data (price, volume, OI, funding) for all enabled markets.
+  source_operation: openapi/overlay-openapi.yml#getAggregatorContracts
+- name: get_contract_specs
+  description: List contract specifications for all enabled markets.
+  source_operation: openapi/overlay-openapi.yml#getAggregatorContractSpecs
+- name: get_markets
+  description: List the market catalog keyed by chain id.
+  source_operation: openapi/overlay-openapi.yml#getMarkets
+- name: get_markets_prices_overview
+  description: Get per-market price overview and recent price series.
+  source_operation: openapi/overlay-openapi.yml#getMarketsPricesOverview
+deployment:
+  mode: none
+  verified: derived
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census

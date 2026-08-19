@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Overlay Market Data Aggregator Markets API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Markets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the market catalog keyed by chain id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.overlay.market/data/api/markets"
+          },
+          "docs": "Returns the market catalog as an object keyed by chain id (e.g. \"56\" for BNB Smart Chain), each value an array of market metadata records (name, logo, currency, description/methodology)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

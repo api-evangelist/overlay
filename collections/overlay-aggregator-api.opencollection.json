@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Overlay Market Data Aggregator API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Aggregator",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List aggregator market data for all enabled markets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.overlay.market/data/api/aggregator/contracts"
+          },
+          "docs": "Returns comprehensive market data for every enabled derivative market (price, 24h volume, bid/ask, open interest, index price, funding rate). Responses are cached for 60 seconds. Unavailable markets are omitted."
+        },
+        {
+          "info": {
+            "name": "List contract specifications for all enabled markets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.overlay.market/data/api/aggregator/contract_specs"
+          },
+          "docs": "Returns a contract-specification subset for each enabled market."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
