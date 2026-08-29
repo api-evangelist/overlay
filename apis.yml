@@ -11,6 +11,17 @@ description: >-
   market catalog, charts price overview), a TypeScript SDK, a GraphQL subgraph,
   and a provider-published Agent Skill for automated trading. Backed by Polychain.
 url: https://raw.githubusercontent.com/api-evangelist/overlay/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
