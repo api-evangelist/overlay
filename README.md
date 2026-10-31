@@ -64,6 +64,110 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Overlay is a company surfaced as a portfolio company of polychain and added to the API Evangelist network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the enrichment pipeline.
+Overlay is a decentralized perpetual-futures protocol on BNB Smart Chain (chain id 56) that lets anyone trade and permissionlessly create markets for emerging, pre-CEX, and narrative-driven assets against any verifiable data feed. Positions are synthetic — traders trade against a protocol-managed price feed with USDT/stablecoin collateral rather than an order book — with a dynamic risk engine managing thin markets and zero liquidity requirements. Overlay exposes a public, unauthenticated market-data API (aggregator contracts, contract specs, market catalog, charts price overview), a TypeScript SDK, a GraphQL subgraph, and a provider-published Agent Skill for automated trading. Backed by Polychain.
 
-Backed by: polychain — https://overlay.market
+**Areas:** Company · DeFi · Perpetual Futures · Derivatives · Trading · Market Data · BNB Smart Chain · Blockchain · Web3
+
+## Overlay on APIs.io
+
+Everything profiled for Overlay is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/overlay/](https://apis.io/providers/overlay/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [Overlay Aggregator API](https://apis.io/apis/overlay/overlay-aggregator-api/) — CoinGecko/CMC-style aggregator market-data feed.
+- [Overlay Charts API](https://apis.io/apis/overlay/overlay-charts-api/) — Price overview and OHLC chart data.
+- [Overlay Markets API](https://apis.io/apis/overlay/overlay-markets-api/) — Market catalog and metadata.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [overlay](https://apis.io/servers/overlay/overlay/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Overlay Market Data Aggregator API](https://apis.io/collections/overlay/open-overlay-aggregator-api/)
+- [Overlay Market Data Aggregator Charts API](https://apis.io/collections/overlay/open-overlay-charts-api/)
+- [Overlay Market Data Aggregator Markets API](https://apis.io/collections/overlay/open-overlay-markets-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Overlay Openapi Overlay](https://apis.io/overlays/overlay/overlay-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Overlay Authentication](https://apis.io/security/overlay/overlay-authentication/)
+- [Overlay Domain Security](https://apis.io/security/overlay/overlay-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://overlay.market)
+- [Documentation](https://docs.overlay.market/)
+- [API reference](https://docs.overlay.market/api/aggregator-market-data)
+- [Support](https://redrct.overlay.market/discord)
+- [GitHub](https://github.com/overlay-market)
+
+## API Evangelist rating
+
+**Kin Score 30.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 44.7 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 0.0 |
+
+**Agent readiness 22.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.7** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/overlay/](https://apis.io/providers/overlay/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Overlay: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/overlay/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
